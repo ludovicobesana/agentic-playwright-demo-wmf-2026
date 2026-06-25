@@ -1,0 +1,35 @@
+{
+  "name": "playwright-agentic-testing-wmf-2026",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node app/server.mjs",
+    "dev": "node app/server.mjs",
+    "test": "playwright test",
+    "test:seed": "playwright test tests/seed.spec.ts",
+    "test:generated": "playwright test tests/generate",
+    "show-report": "playwright show-report",
+    "init:agents": "npx playwright init-agents --loop=vscode",
+    "docs:start": "node -r ./website/require-shim.cjs ./node_modules/@docusaurus/core/bin/docusaurus.mjs start website --host 127.0.0.1 --port 3002",
+    "docs:build": "node -r ./website/require-shim.cjs ./node_modules/@docusaurus/core/bin/docusaurus.mjs build website",
+    "docs:serve": "node -r ./website/require-shim.cjs ./node_modules/@docusaurus/core/bin/docusaurus.mjs serve website --host 127.0.0.1 --port 3003"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
+    "@playwright/test": "^1.55.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.10.2",
+    "playwright": "^1.55.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "^5.7.3",
+    "webpack": "5.98.0"
+  }
+}

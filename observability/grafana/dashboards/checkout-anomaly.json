@@ -1,0 +1,67 @@
+{
+  "uid": "checkout-anomaly",
+  "title": "Checkout Error Spike",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "tags": ["agentic-qa", "checkout", "telemetry"],
+  "timezone": "browser",
+  "editable": false,
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Checkout 500s",
+      "gridPos": { "x": 0, "y": 0, "w": 8, "h": 6 },
+      "datasource": { "type": "grafana-testdata-datasource", "uid": "DemoTelemetry" },
+      "targets": [
+        {
+          "scenarioId": "csv_metric_values",
+          "stringInput": "0,2,5,12,27,31,18"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "value": null, "color": "green" },
+              { "value": 5, "color": "orange" },
+              { "value": 20, "color": "red" }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "textMode": "auto",
+        "wideLayout": true,
+        "orientation": "auto"
+      }
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Checkout failures over time",
+      "gridPos": { "x": 8, "y": 0, "w": 16, "h": 10 },
+      "datasource": { "type": "grafana-testdata-datasource", "uid": "DemoTelemetry" },
+      "targets": [
+        {
+          "scenarioId": "csv_metric_values",
+          "stringInput": "1,1,2,4,8,14,21,28,31"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "title": "Incident Note",
+      "gridPos": { "x": 0, "y": 6, "w": 8, "h": 10 },
+      "options": {
+        "content": "<h3>Mock production incident</h3><p>User clicked <strong>Submit</strong> but API returned <strong>500</strong> on <code>/checkout</code>. The Planner should turn this into <code>specs/anomaly-repro.md</code>.</p>",
+        "mode": "html"
+      }
+    }
+  ]
+}

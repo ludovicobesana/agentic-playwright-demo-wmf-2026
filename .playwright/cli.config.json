@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "persistent": true,
+  "reuseExistingSession": true,
+  "browserExtensions": [
+    "playwright"
+  ],
+  "sessionDiscovery": {
+    "preferExistingBrowser": true,
+    "allowAttach": true
+  },
+  "notes": "Illustrative CLI configuration for demoing persistent browser sessions with Playwright browser extensions."
+}

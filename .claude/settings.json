@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run start)",
+      "Bash(npm run dev)",
+      "Bash(npm run test)",
+      "Bash(npm run test:seed)",
+      "Bash(npm run test:generated)",
+      "Bash(npm run show-report)",
+      "Bash(npm run docs:start)",
+      "Bash(npm run docs:build)",
+      "Bash(npm ci)",
+      "Bash(npm install)",
+      "Bash(npx playwright test*)",
+      "Bash(npx playwright show-report*)",
+      "Bash(npx playwright install*)",
+      "Bash(node app/server.mjs)",
+      "Bash(CHECKOUT_FORCE_500=1 npm run test:generated)",
+      "Bash(docker compose -f observability/docker-compose.yml*)"
+    ]
+  }
+}

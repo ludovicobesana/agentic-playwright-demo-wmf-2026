@@ -1,0 +1,9 @@
+apiVersion: 1
+
+datasources:
+  - name: DemoTelemetry
+    uid: DemoTelemetry
+    type: grafana-testdata-datasource
+    access: proxy
+    isDefault: true
+    editable: false

@@ -1,0 +1,37 @@
+:root {
+  --ifm-color-primary: #124e66;
+  --ifm-color-primary-dark: #0f4458;
+  --ifm-color-primary-darker: #0c394a;
+  --ifm-color-primary-darkest: #082d39;
+  --ifm-color-primary-light: #15607f;
+  --ifm-color-primary-lighter: #1a6d90;
+  --ifm-color-primary-lightest: #217ca4;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: Inter, 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --ifm-heading-font-family: Inter, 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --ifm-navbar-background-color: rgba(255, 248, 240, 0.88);
+  --ifm-footer-background-color: #0d3444;
+  --ifm-footer-color: rgba(255, 255, 255, 0.88);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7efe5;
+}
+
+.navbar {
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(31, 35, 40, 0.08);
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu__link--active,
+.table-of-contents__link--active {
+  font-weight: 700;
+}

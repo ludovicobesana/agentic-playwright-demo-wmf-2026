@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-06-02T09:14:27.403Z",
+  "service": "checkout-web",
+  "level": "error",
+  "event": "checkout_submit_failed",
+  "message": "User clicked 'Submit' but API returned 500 on /checkout",
+  "requestId": "req-7f3b8f0b1f2c",
+  "checkoutId": "chk-10482",
+  "httpStatus": 500,
+  "latencyMs": 1428,
+  "labels": {
+    "flow": "checkout",
+    "customerTier": "prospect",
+    "region": "us-west-2",
+    "frontend": "playwright-agentic-demo"
+  },
+  "k6": {
+    "scenario": "checkout_smoke",
+    "errorRate": 0.27,
+    "p95Ms": 1582,
+    "checks": {
+      "submit button visible": true,
+      "checkout endpoint returned 2xx": false
+    }
+  }
+}

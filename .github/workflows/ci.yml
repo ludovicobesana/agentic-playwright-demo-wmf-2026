@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps chromium
+
+      - run: npm run test:seed
+
+      - name: Run generated Playwright tests
+        run: npm run test:generated
+
+      - name: Healer handoff point
+        if: failure()
+        run: |
+          echo "At this point an automated Healer could inspect traces, replay the failed step, and patch only locator/timing drift."
+          echo "If the checkout flow is missing or a core assertion would need to be bypassed, the Healer must stop and mark the test skipped for human review."
